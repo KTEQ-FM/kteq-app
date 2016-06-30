@@ -63,9 +63,10 @@ Global
 		$2.FileWidth = 120
 		$2.TabWidth = 2
 		$2.IndentWidth = 2
-		$2.inheritsSet = VisualStudio
+		$2.inheritsSet = null
 		$2.inheritsScope = text/plain
-		$2.scope = text/x-csharp
+		$2.scope = application/xml
+		$2.TabsToSpaces = False
 		$0.CSharpFormattingPolicy = $3
 		$3.IndentSwitchSection = True
 		$3.NewLinesForBracesInProperties = True
@@ -97,8 +98,9 @@ Global
 		$5.inheritsSet = null
 		$5.scope = application/config+xml
 		$0.XmlFormattingPolicy = $6
-		$6.inheritsSet = null
-		$6.scope = application/config+xml
+		$6.inheritsSet = Mono
+		$6.scope = application/xml
+		$6.inheritsScope = application/xml
 		$0.TextStylePolicy = $7
 		$7.inheritsSet = null
 		$7.scope = application/xml

@@ -1,49 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		x:Class="KTEQ.MainPage"
-		BackgroundColor="White"
-		Title="KTEQ">
-	
-	<StackLayout>
-		<StackLayout.Children>
+		xmlns:local="clr-namespace:KTEQ;assembly=KTEQ" 
+		x:Class="KTEQ.MainPage">
 
-		<StackLayout>
-			<StackLayout.Children>
-					<Button x:Name="streamPlayButton"
-						HorizontalOptions="CenterAndExpand" 
-						VerticalOptions="CenterAndExpand"
-						Text = "Start Stream"
-						TextColor="Yellow"
-						BackgroundColor="Navy"
-						Font="Large"
-						Clicked="Button_OnClicked" />		
-
-					<Button x:Name="streamStopButton"
-						HorizontalOptions="CenterAndExpand" 
-						VerticalOptions="CenterAndExpand"
-						Text = "Stop Stream"
-						TextColor="Yellow"
-						BackgroundColor="Navy"
-						Font="Large"
-						Clicked="Button_OnClicked" />	
-
-			</StackLayout.Children>
-		</StackLayout>
+	<local:StreamPage />
+	<NavigationPage Title="Schedule" Icon="schedule.png">
+		<x:Arguments>
+			<local:SchedulePage />
+		</x:Arguments>
+	</NavigationPage>
+	<NavigationPage Title="Donate" Icon="schedule.png">
+		<x:Arguments>
+			<local:DonatePage />
+		</x:Arguments>
+	</NavigationPage>
+	<local:SettingsPage />	
 
 
-			<Label x:Name="streamLabel" 
-					Text = "Suh Dude"
-					HorizontalOptions="Center" />
-			
-			<Grid x:Name="MainGrid"
-					VerticalOptions="Center"
-					BackgroundColor="Purple"
-					WidthRequest="150"
-					HeightRequest="50"
-					HorizontalOptions="Start"/>
-		</StackLayout.Children>
-	</StackLayout>
-
-	
-</ContentPage>
+</TabbedPage>
