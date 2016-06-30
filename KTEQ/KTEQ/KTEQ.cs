@@ -1,41 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 using Xamarin.Forms;
 
 namespace KTEQ
 {
-	public class App : Application
-	{
-		public App ()
-		{
-			// The root page of your application
-			MainPage = new ContentPage {
-				Content = new StackLayout {
-					VerticalOptions = LayoutOptions.Center,
-					Children = {
-						new Label {
-							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
-					}
-				}
-			};
-		}
+  //tryna make a real crappy streamer here
+  public class Streamer : ContentPage
+  {
+    int count = 0;
+    public Streamer()
+    {
+      var playButton = new Button
+      {
+        Text = "Play"
+      };
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+      var playLabel = new Label
+      {
+        Text = "Hey duuuude"
+      };
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+      var stackLayout = new StackLayout
+      {
+        Padding = 40,
+        Spacing = 10
+      };
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+      stackLayout.Children.Add(playButton);
+      stackLayout.Children.Add(playLabel );
+
+      playButton.Clicked += (sender, args) =>
+      {
+        count++;
+        playLabel.Text = "" + count;
+      };
+
+      Content = stackLayout;
+    }
+  }
 }
 

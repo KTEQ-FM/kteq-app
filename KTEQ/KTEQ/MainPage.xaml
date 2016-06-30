@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:KTEQ;assembly=KTEQ" 
+		x:Class="KTEQ.MainPage">
+
+	<local:StreamPage />
+	<NavigationPage Title="Schedule" Icon="schedule.png">
+		<x:Arguments>
+			<local:SchedulePage />
+		</x:Arguments>
+	</NavigationPage>
+	<NavigationPage Title="Donate" Icon="schedule.png">
+		<x:Arguments>
+			<local:DonatePage />
+		</x:Arguments>
+	</NavigationPage>
+	<local:SettingsPage />	
+
+
+</TabbedPage>
